@@ -6,17 +6,20 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios --simulator='iPhone 8'",
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "postinstall": "node node_modules/sensorsdata-react-native-test/SensorsDataRNHook.js -run",
     "test": "jest"
   },
   "dependencies": {
     "lodash": "^4.17.11",
     "react": "16.8.3",
     "react-native": "0.59.4",
-    "react-native-fs": "^2.13.3",
-    "react-native-gesture-handler": "^1.1.0",
+    "react-native-fs": "^2.13.4",
+    "react-native-gesture-handler": "^1.6.1",
+    "react-native-screens": "^2.4.0",
     "react-native-vector-icons": "^6.4.2",
-    "react-native-webview": "^5.6.2",
-    "react-navigation": "^3.7.1"
+    "react-native-webview": "^6.0.2",
+    "react-navigation": "^3.7.1",
+    "sensorsdata-react-native-test": "^2.0.1-1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

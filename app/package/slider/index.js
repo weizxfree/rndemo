@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Slider, Text } from 'react-native';
+import { View, Slider, Text ,TouchableHighlight} from 'react-native';
 import Card from '../../widget/card';
 import Package from '../../widget/package';
 
@@ -26,7 +26,6 @@ const SLIDER_LIST = [
   {
     type: 'fourValue',
     value: 30,
-    disabled: true,
     maximumValue: 100,
     minimumValue: 0
   },
@@ -56,9 +55,14 @@ class SliderPackage extends Component {
     return val.toFixed(2);
   };
 
+   _complete =()=>{
+          alert('finish');
+   };
+
   previewDemoOne = () => {
     return (
       <View>
+
         {SLIDER_LIST.map((item, index) => {
           return (
             <View style={{ flexDirection: 'row' }} key={index}>
@@ -74,6 +78,7 @@ class SliderPackage extends Component {
                 onValueChange={value => {
                   this.onValueChange(value, item.type);
                 }}
+                onSlidingComplete={this._complete}
                 thumbImage={item.thumbImage}
                 trackImage={item.trackImage}
                 minimumTrackImage={item.minimumTrackImage}
@@ -85,6 +90,7 @@ class SliderPackage extends Component {
             </View>
           );
         })}
+
       </View>
     );
   };

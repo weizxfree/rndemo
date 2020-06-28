@@ -103,6 +103,7 @@ class TextPackage extends Component {
         {list.map((item, index) => {
           return (
             <Text
+            onPress = {()=>{}}
               key={index}
               numberOfLines={1}
               ellipsizeMode={this.state.ellipsizeMode}

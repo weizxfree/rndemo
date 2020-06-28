@@ -29,7 +29,7 @@ class WebViewPackage extends Component {
     super(props);
 
     this.state = {
-      url: 'https://reactjs.org/'
+      url: 'file:///android_asset/sensors.htm'
     };
   }
 

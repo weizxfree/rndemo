@@ -1,6 +1,9 @@
 package com.reactnativedemo;
 
+import android.content.Intent;
+
 import com.facebook.react.ReactActivity;
+import com.sensorsdata.analytics.android.sdk.util.SensorsDataUtils;
 
 public class MainActivity extends ReactActivity {
 
@@ -11,5 +14,12 @@ public class MainActivity extends ReactActivity {
     @Override
     protected String getMainComponentName() {
         return "reactNativeDemo";
+    }
+
+
+    @Override
+    public void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        SensorsDataUtils.handleSchemeUrl(this, intent);
     }
 }

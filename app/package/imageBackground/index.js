@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ImageBackground, Text } from 'react-native';
+import { View, ImageBackground, Text ,TouchableHighlight} from 'react-native';
 import Card from '../../widget/card';
 import Package from '../../widget/package';
 
@@ -17,19 +17,23 @@ class ImageBackgroundPackage extends Component {
 
   previewDemoOne = () => {
     return (
-      <ImageBackground
-        source={{ uri: IMAGEBACKGROUND_URL }}
-        style={{
-          width: '100%',
-          height: 440,
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}
-      >
-        <Text style={{ fontSize: 60, color: '#fff', fontWeight: 'bold' }}>
-          Inside
-        </Text>
-      </ImageBackground>
+       <View>
+            <TouchableHighlight onPress={() => {}}>
+                     <ImageBackground
+                            source={{ uri: IMAGEBACKGROUND_URL }}
+                            style={{
+                              width: '100%',
+                              height: 440,
+                              justifyContent: 'center',
+                              alignItems: 'center'
+                            }}
+                          >
+                            <Text style={{ fontSize: 60, color: '#fff', fontWeight: 'bold' }}>
+                              Inside
+                            </Text>
+                     </ImageBackground>
+            </TouchableHighlight>
+       </View>
     );
   };
 

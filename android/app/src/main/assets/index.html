@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #vi {
+            height: 100px;
+            visibility: hidden;
+        }
+
+        #opacity {
+            height: 100px;
+            opacity: 0;
+        }
+
+        #dis {
+            display: none;
+        }
+
+        #a1 {
+            display: block;
+            width: 100px;
+            height: 130px;
+        }
+
+        #a2 {
+            display: block;
+            width: 100px;
+            height: 130px;
+            background: yellowgreen;
+        }
+
+        #over {
+            display: block;
+            width: 100px;
+            height: 130px;
+            background: orange;
+            border: 4px solid black;
+            overflow: hidden;
+        }
+    </style>
+
+    <script>
+(function(para) {
+	var p = para.sdk_url, n = para.name, w = window, d = document, s = 'script',x = null,y = null;
+	w['sensorsDataAnalytic201505'] = n;
+	w[n] = w[n] || function(a) {return function() {(w[n]._q = w[n]._q || []).push([a, arguments]);}};
+	var ifs = ['track','quick','register','registerPage','registerOnce','clearAllRegister','trackSignup', 'trackAbtest', 	'setProfile','setOnceProfile','appendProfile', 'incrementProfile', 'deleteProfile', 'unsetProfile', 	'identify','login','logout','trackLink','clearAllRegister'];
+	for (var i = 0; i < ifs.length; i++) {
+		w[n][ifs[i]] = w[n].call(null, ifs[i]);
+	}
+	if (!w[n]._t) {
+		x = d.createElement(s), y = d.getElementsByTagName(s)[0];
+		x.async = 1;
+		x.src = p;
+		w[n].para = para;
+		y.parentNode.insertBefore(x, y);
+	}
+})({
+	sdk_url:'http://static.sensorsdata.cn/sdk/test/sensorsdata.full.js',
+    heatmap_url:'http://static.sensorsdata.cn/sdk/test/heatmap.min.js',
+	name: 'sensors',
+	use_app_track: true,
+	server_url:'http://66.6.56.137:8106/sa?project=wangzhuozhou',
+	heatmap: {
+	}
+});
+sensors.quick('autoTrack'); //神策系统必须是 1.4 最新版及以上
+</script>
+</head>
+
+<body>
+
+<div class="my-test">
+    <h3>我的测试页面</h3>
+    <div>
+        <p>各种标签采集</p>
+        <div>
+            a 标签采集
+            <a href="www.baidu.com">去百度</a>
+        </div>
+        <div>
+            input 标签采集
+            <input value="" placeholder="请输入您的银行卡密码" />
+        </div>
+        <div>
+            textarea 标签采集
+            <textarea name="" id="" placeholder="请输入您的银行卡号" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            button 标签采集
+            <button>一起OK，发送给我，给你打10万</button>
+        </div>
+    </div>
+</div>
+<div>
+    <div>
+        visibility:hidden
+        <button id='vi'>
+            visibility:hidden
+        </button>
+    </div>
+    <div>
+        opacity:0
+        <button id="opacity">
+            opacity:0
+        </button>
+    </div>
+    <div>
+        display:none
+        <button id='dis'>
+            display:none
+        </button>
+    </div>
+    <div>
+        overflow
+        <div id="over">
+            <a id="a1">a1</a>
+            <a id="a2">a2</a>
+        </div>
+    </div>
+
+</div>
+</body>
+
+</html>

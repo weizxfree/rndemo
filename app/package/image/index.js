@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, TouchableHighlight } from "react-native";
 import Card from '../../widget/card';
 import Package from '../../widget/package';
 
@@ -51,11 +51,15 @@ class ImagePackage extends Component {
       >
         {list.map((item, index) => {
           return (
-            <Image
-              style={[{ marginRight: 15 }, item.style]}
-              key={index}
-              source={{ uri: item.url ? item.url : REACT_ICON_URL }}
-            />
+            <View>
+              <TouchableHighlight onPress={() => {}}>
+                <Image
+                  style={[{ marginRight: 15 }, item.style]}
+                  key={index}
+                  source={{ uri: item.url ? item.url : REACT_ICON_URL }}
+                />
+              </TouchableHighlight>
+            </View>
           );
         })}
       </View>

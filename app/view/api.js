@@ -15,7 +15,7 @@ class APIView extends Component {
     return (
       <View style={styles.container}>
         <ScrollView contentContainerStyle={styles.folding_list}>
-          <View style={styles.tips}>
+          <View>
             <Text style={styles.tips_title_h1}>{VALUE.introduceTitle}</Text>
             <Text style={styles.tips_title_text}>{VALUE.introduce}</Text>
           </View>

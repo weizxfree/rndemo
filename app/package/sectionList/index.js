@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, SectionList } from 'react-native';
 import Card from '../../widget/card';
 import Package from '../../widget/package';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const COMPONENT_LABEL = '高性能的分组(section)列表';
 const COMPONENT_VALUE = 'SectionList';
@@ -33,11 +34,12 @@ class SectionListPackage extends Component {
         <SectionList
           renderItem={({ item, index, section }) => (
             <Text
+              onPress={() => {}}
               key={index}
               style={{
                 borderBottomWidth: 1,
-                borderBottomColor: '#eee',
-                textAlign: 'center',
+                borderBottomColor: "#eee",
+                textAlign: "center",
                 height: 40,
                 lineHeight: 40
               }}
@@ -47,11 +49,12 @@ class SectionListPackage extends Component {
           )}
           renderSectionHeader={({ section: { title } }) => (
             <Text
+              onPress={() => {}}
               style={{
-                fontWeight: 'bold',
+                fontWeight: "bold",
                 padding: 4,
                 fontSize: 16,
-                backgroundColor: '#eee'
+                backgroundColor: "#eee"
               }}
             >
               {title}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, RefreshControl, View, Text } from 'react-native';
+import { ScrollView, RefreshControl, View, Text , TouchableOpacity} from 'react-native';
 import Card from '../../widget/card';
 import Package from '../../widget/package';
 import { dataFactory } from '../../common/utils';
@@ -81,6 +81,9 @@ class ScrollViewPackage extends Component {
   renderScrollItem = () => {
     return this.state.list.map((item, index) => {
       return (
+       <TouchableOpacity
+                      onPress={()=>{}}
+                      >
         <View
           key={index}
           style={[
@@ -114,6 +117,8 @@ class ScrollViewPackage extends Component {
             {item.label}
           </Text>
         </View>
+
+        </TouchableOpacity>
       );
     });
   };

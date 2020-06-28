@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text,TouchableOpacity } from 'react-native';
 import Card from '../../widget/card';
 import Package from '../../widget/package';
 
@@ -97,10 +97,15 @@ class ViewPackage extends Component {
       >
         {list.map((item, index) => {
           return (
+             <TouchableOpacity
+                                onPress={()=>{}}
+                                >
             <View style={item.viewStyle} key={index}>
               <Text style={item.textStyle}>{item.label}</Text>
               {item.children && item.children()}
             </View>
+            </TouchableOpacity>
+
           );
         })}
       </View>
